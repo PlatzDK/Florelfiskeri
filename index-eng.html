@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Florel Fiskeri – Cottage Rental by Karup River, Denmark</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css?family=Inter:400,700&display=swap" rel="stylesheet" />
+    <style>
+      html { font-family: 'Inter', sans-serif; }
+    </style>
+  </head>
+  <body class="bg-[#f8f5f0] text-gray-800">
+    <!-- Navigation -->
+    <nav class="bg-[#29543c] text-white px-4 py-3 flex justify-between items-center shadow">
+      <div class="text-2xl font-bold tracking-wide">Florel Fiskeri</div>
+      <div class="flex gap-3">
+        <a href="index.html" title="Choose language" class="px-2 py-1 rounded hover:bg-[#407d5e]">↩</a>
+        <a href="index-da.html" class="px-2 py-1 rounded hover:bg-[#407d5e]">Dansk</a>
+        <a href="index-en.html" class="px-2 py-1 rounded bg-[#407d5e] underline">English</a>
+        <a href="index-de.html" class="px-2 py-1 rounded hover:bg-[#407d5e]">Deutsch</a>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative flex items-center justify-center h-[320px] md:h-[500px] bg-cover bg-center"
+      style="background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80');">
+      <div class="bg-black/50 absolute inset-0"></div>
+      <div class="relative z-10 text-center text-white">
+        <h1 class="text-3xl md:text-5xl font-bold mb-4 drop-shadow">Welcome to Florel Fiskeri</h1>
+        <p class="text-lg md:text-2xl mb-6 drop-shadow">Your tranquil holiday home in the forest – close to world-class fishing in Denmark</p>
+        <a href="#booking" class="bg-[#407d5e] hover:bg-[#29543c] px-8 py-3 rounded-lg text-lg font-semibold shadow transition">Book now</a>
+      </div>
+    </section>
+
+    <main class="max-w-5xl mx-auto p-4 space-y-16">
+
+      <!-- About the Cottage -->
+      <section id="house" class="grid md:grid-cols-2 gap-8 items-center">
+        <div>
+          <h2 class="text-2xl font-bold text-[#29543c] mb-2">About Florel Fiskeri</h2>
+          <p class="mb-4">Florel Fiskeri is a cozy and modern cottage, tucked away in the woods by Denmark’s renowned Karup River. Perfect for families, couples, or keen anglers, the cottage sleeps up to 6 and offers all the comfort you need for a relaxing getaway.</p>
+          <ul class="space-y-2 text-base">
+            <li>• 2 bedrooms with double beds</li>
+            <li>• Open-plan kitchen & living area</li>
+            <li>• Bathroom with shower</li>
+            <li>• Terrace with views of the lake</li>
+            <li>• Free Wi-Fi & smart TV</li>
+            <li>• Drying cabinet for fishing gear</li>
+            <li>• <span class="italic">No smoking, pets by prior arrangement</span></li>
+          </ul>
+        </div>
+        <!-- Gallery -->
+        <div>
+          <div class="grid grid-cols-2 gap-3 rounded-xl overflow-hidden shadow-lg">
+            <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80" alt="Living room" class="object-cover aspect-square" />
+            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=400&q=80" alt="Bedroom" class="object-cover aspect-square" />
+            <img src="https://images.unsplash.com/photo-1465101178521-c1a9136a3d41?auto=format&fit=crop&w=400&q=80" alt="Terrace" class="object-cover aspect-square" />
+            <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80" alt="Nature" class="object-cover aspect-square" />
+          </div>
+        </div>
+      </section>
+
+      <!-- The Area -->
+      <section id="area" class="bg-[#e4e7db]/80 rounded-xl p-6 md:p-10 flex flex-col md:flex-row gap-6 shadow">
+        <div class="flex-1">
+          <h2 class="text-2xl font-bold text-[#29543c] mb-2">Experience the Area</h2>
+          <p class="mb-3">Located in the beautiful Kompedal Forest, Florel Fiskeri offers direct access to unspoiled nature and some of Denmark’s best trout fishing:</p>
+          <ul class="list-disc pl-5 mb-2">
+            <li>Karup River: Famous for big sea trout and fly fishing</li>
+            <li>Forest hiking trails & mountain biking</li>
+            <li>Abundant wildlife – deer, birds, squirrels</li>
+            <li>Swim or paddle in the nearby lake</li>
+            <li>Just a short drive to Karup or historic Viborg</li>
+          </ul>
+        </div>
+        <div class="flex-1 flex items-center justify-center">
+          <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80" alt="Fishing at the river" class="rounded-lg shadow max-h-64 object-cover" />
+        </div>
+      </section>
+
+      <!-- Booking Form -->
+      <section id="booking" class="bg-white rounded-xl shadow p-6 max-w-lg mx-auto">
+        <h2 class="text-2xl font-bold text-[#29543c] mb-4">Booking Request</h2>
+        <form class="flex flex-col gap-4">
+          <div>
+            <label for="name" class="block text-sm font-medium mb-1">Your Name</label>
+            <input type="text" id="name" name="name" class="w-full rounded border border-gray-300 px-3 py-2" required />
+          </div>
+          <div>
+            <label for="date" class="block text-sm font-medium mb-1">Desired Dates</label>
+            <input type="text" id="date" name="date" placeholder="e.g. July 14–21, 2025" class="w-full rounded border border-gray-300 px-3 py-2" required />
+          </div>
+          <div>
+            <label for="msg" class="block text-sm font-medium mb-1">Message</label>
+            <textarea id="msg" name="msg" rows="3" class="w-full rounded border border-gray-300 px-3 py-2" required></textarea>
+          </div>
+          <button type="submit" class="bg-[#407d5e] hover:bg-[#29543c] text-white font-semibold rounded py-2 transition">Send booking request</button>
+        </form>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact" class="bg-[#e4e7db]/80 rounded-xl p-6 max-w-lg mx-auto flex flex-col gap-4 shadow">
+        <h2 class="text-2xl font-bold text-[#29543c] mb-2">Contact</h2>
+        <div>
+          <div class="font-semibold">Contact person:</div>
+          <div>Preben Thomsen</div>
+        </div>
+        <div>
+          <div class="font-semibold">Email:</div>
+          <a href="mailto:preben@florelfiskeri.rf.gd" class="underline text-[#407d5e]">preben@florelfiskeri.rf.gd</a>
+        </div>
+        <div>
+          <div class="font-semibold">Phone:</div>
+          <a href="tel:+4520298081" class="underline text-[#407d5e]">+45 20 29 80 81</a>
+        </div>
+        <form class="flex flex-col gap-4 mt-2">
+          <div>
+            <label for="contact-name" class="block text-sm font-medium mb-1">Your Name</label>
+            <input type="text" id="contact-name" name="contact-name" class="w-full rounded border border-gray-300 px-3 py-2" required />
+          </div>
+          <div>
+            <label for="contact-msg" class="block text-sm font-medium mb-1">Message</label>
+            <textarea id="contact-msg" name="contact-msg" rows="3" class="w-full rounded border border-gray-300 px-3 py-2" required></textarea>
+          </div>
+          <button type="submit" class="bg-[#407d5e] hover:bg-[#29543c] text-white font-semibold rounded py-2 transition">Send</button>
+        </form>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-20 bg-[#29543c] text-white text-center py-6">
+      <div>© 2025 Florel Fiskeri · Cottage rental by Karup River, Denmark · florelfiskeri.rf.gd</div>
+    </footer>
+  </body>
+</html>
