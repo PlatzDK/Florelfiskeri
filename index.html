@@ -1,30 +1,135 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="da">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Florel Fiskeri – Choose Language / Vælg Sprog / Sprache wählen</title>
+    <title>Florel Fiskeri</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css?family=Inter:400,700&display=swap" rel="stylesheet" />
     <style>
       html { font-family: 'Inter', sans-serif; }
     </style>
   </head>
-  <body class="min-h-screen flex flex-col bg-[#f8f5f0] text-gray-800">
-    <main class="flex flex-1 flex-col justify-center items-center">
-      <div class="mb-10">
-        <img src="images/cover.jpeg" alt="Forest" class="w-32 h-32 rounded-full object-cover shadow mb-6" />
-        <h1 class="text-3xl md:text-4xl font-bold text-[#29543c] mb-2 text-center">Florel Fiskeri</h1>
-        <p class="text-lg md:text-xl text-center mb-4">Holiday home in Danish nature – choose your language</p>
+  <body class="bg-[#f8f5f0] text-gray-800">
+    <!-- Navigation -->
+    <nav class="bg-[#29543c] text-white px-4 py-3 flex justify-between items-center shadow">
+      <div class="text-2xl font-bold tracking-wide" data-i18n="navTitle">Florel Fiskeri</div>
+      <div class="flex gap-3">
+        <button data-setlang="da" class="px-2 py-1 rounded hover:bg-[#407d5e]" data-i18n="langDa"></button>
+        <button data-setlang="en" class="px-2 py-1 rounded hover:bg-[#407d5e]" data-i18n="langEn"></button>
+        <button data-setlang="de" class="px-2 py-1 rounded hover:bg-[#407d5e]" data-i18n="langDe"></button>
       </div>
-      <nav class="flex flex-col gap-5 items-center w-full max-w-xs">
-        <a href="index-da.html" class="block w-full py-3 px-6 text-xl font-semibold rounded-lg shadow bg-[#29543c] text-white hover:bg-[#407d5e] transition text-center">Dansk</a>
-        <a href="index-en.html" class="block w-full py-3 px-6 text-xl font-semibold rounded-lg shadow bg-[#29543c] text-white hover:bg-[#407d5e] transition text-center">English</a>
-        <a href="index-de.html" class="block w-full py-3 px-6 text-xl font-semibold rounded-lg shadow bg-[#29543c] text-white hover:bg-[#407d5e] transition text-center">Deutsch</a>
-      </nav>
-      <footer class="mt-20 text-sm text-gray-500 text-center w-full">
-        © 2025 Florel Fiskeri · florelfiskeri.rf.gd
-      </footer>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative flex items-center justify-center h-[320px] md:h-[500px] bg-cover bg-center" style="background-image: url('images/cover.jpeg');">
+      <div class="bg-black/50 absolute inset-0"></div>
+      <div class="relative z-10 text-center text-white">
+        <h1 class="text-3xl md:text-5xl font-bold mb-4 drop-shadow" data-i18n="heroTitle"></h1>
+        <p class="text-lg md:text-2xl mb-6 drop-shadow" data-i18n="heroText"></p>
+        <a href="#booking" class="bg-[#407d5e] hover:bg-[#29543c] px-8 py-3 rounded-lg text-lg font-semibold shadow transition" data-i18n="heroButton"></a>
+      </div>
+    </section>
+
+    <main class="max-w-5xl mx-auto p-4 space-y-16">
+      <!-- About the House -->
+      <section id="house" class="grid md:grid-cols-2 gap-8 items-center">
+        <div>
+          <h2 class="text-2xl font-bold text-[#29543c] mb-2" data-i18n="aboutTitle"></h2>
+          <p class="mb-4" data-i18n="aboutText"></p>
+          <ul class="list-disc pl-5 space-y-2 text-base">
+            <li data-i18n="aboutFeature1"></li>
+            <li data-i18n="aboutFeature2"></li>
+            <li data-i18n="aboutFeature3"></li>
+            <li data-i18n="aboutFeature4"></li>
+            <li data-i18n="aboutFeature5"></li>
+            <li data-i18n="aboutFeature6"></li>
+            <li><span class="italic" data-i18n="aboutFeature7"></span></li>
+          </ul>
+        </div>
+        <!-- Gallery -->
+        <div>
+          <div class="grid grid-cols-2 gap-3 rounded-xl overflow-hidden shadow-lg">
+            <img src="images/lake_boat.jpeg" class="object-cover aspect-square" data-i18n-alt="galleryAlt1" />
+            <img src="images/outside_entrance.jpeg" class="object-cover aspect-square" data-i18n-alt="galleryAlt2" />
+            <img src="images/outside_terrace.jpeg" class="object-cover aspect-square" data-i18n-alt="galleryAlt3" />
+            <img src="images/lake_duck_house.jpeg" class="object-cover aspect-square" data-i18n-alt="galleryAlt4" />
+          </div>
+        </div>
+      </section>
+
+      <!-- Area -->
+      <section id="area" class="bg-[#e4e7db]/80 rounded-xl p-6 md:p-10 flex flex-col md:flex-row gap-6 shadow">
+        <div class="flex-1">
+          <h2 class="text-2xl font-bold text-[#29543c] mb-2" data-i18n="areaTitle"></h2>
+          <p class="mb-3" data-i18n="areaText"></p>
+          <ul class="list-disc pl-5 mb-2">
+            <li data-i18n="areaFeature1"></li>
+            <li data-i18n="areaFeature2"></li>
+            <li data-i18n="areaFeature3"></li>
+            <li data-i18n="areaFeature4"></li>
+            <li data-i18n="areaFeature5"></li>
+          </ul>
+        </div>
+        <div class="flex-1 flex items-center justify-center">
+          <img src="images/lake_tree.jpeg" class="rounded-lg shadow max-h-64 object-cover" data-i18n-alt="areaImageAlt" />
+        </div>
+      </section>
+
+      <!-- Booking Form -->
+      <section id="booking" class="bg-white rounded-xl shadow p-6 max-w-lg mx-auto">
+        <h2 class="text-2xl font-bold text-[#29543c] mb-4" data-i18n="bookingTitle"></h2>
+        <form class="flex flex-col gap-4">
+          <div>
+            <label for="name" class="block text-sm font-medium mb-1" data-i18n="bookingName"></label>
+            <input type="text" id="name" name="name" class="w-full rounded border border-gray-300 px-3 py-2" required />
+          </div>
+          <div>
+            <label for="date" class="block text-sm font-medium mb-1" data-i18n="bookingDate"></label>
+            <input type="text" id="date" name="date" class="w-full rounded border border-gray-300 px-3 py-2" required data-i18n-placeholder="bookingDatePlaceholder" />
+          </div>
+          <div>
+            <label for="msg" class="block text-sm font-medium mb-1" data-i18n="bookingMsg"></label>
+            <textarea id="msg" name="msg" rows="3" class="w-full rounded border border-gray-300 px-3 py-2" required></textarea>
+          </div>
+          <button type="submit" class="bg-[#407d5e] hover:bg-[#29543c] text-white font-semibold rounded py-2 transition" data-i18n="bookingButton"></button>
+        </form>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact" class="bg-[#e4e7db]/80 rounded-xl p-6 max-w-lg mx-auto flex flex-col gap-4 shadow">
+        <h2 class="text-2xl font-bold text-[#29543c] mb-2" data-i18n="contactTitle"></h2>
+        <div>
+          <div class="font-semibold" data-i18n="contactPersonLabel"></div>
+          <div>Preben Thomsen</div>
+        </div>
+        <div>
+          <div class="font-semibold" data-i18n="contactEmailLabel"></div>
+          <a href="mailto:preben@florelfiskeri.rf.gd" class="underline text-[#407d5e]">preben@florelfiskeri.rf.gd</a>
+        </div>
+        <div>
+          <div class="font-semibold" data-i18n="contactPhoneLabel"></div>
+          <a href="tel:+4520298081" class="underline text-[#407d5e]">20 29 80 81</a>
+        </div>
+        <form class="flex flex-col gap-4 mt-2">
+          <div>
+            <label for="contact-name" class="block text-sm font-medium mb-1" data-i18n="contactName"></label>
+            <input type="text" id="contact-name" name="contact-name" class="w-full rounded border border-gray-300 px-3 py-2" required />
+          </div>
+          <div>
+            <label for="contact-msg" class="block text-sm font-medium mb-1" data-i18n="contactMsg"></label>
+            <textarea id="contact-msg" name="contact-msg" rows="3" class="w-full rounded border border-gray-300 px-3 py-2" required></textarea>
+          </div>
+          <button type="submit" class="bg-[#407d5e] hover:bg-[#29543c] text-white font-semibold rounded py-2 transition" data-i18n="contactButton"></button>
+        </form>
+      </section>
     </main>
+
+    <!-- Footer -->
+    <footer class="mt-20 bg-[#29543c] text-white text-center py-6">
+      <div data-i18n="footerText"></div>
+    </footer>
+
+    <script src="translate.js"></script>
   </body>
 </html>
