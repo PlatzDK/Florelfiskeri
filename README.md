@@ -1,3 +1,61 @@
+Florel Fiskeri – AI Assistant Guide (v2.0)
+
+Version: 2.0.0 — August 2025
+
+Om dette projekt
+
+Denne version af Florel Fiskeri-websitet er bygget helt forfra for at gøre det nemt at vedligeholde, oversætte og udvide.  Sitet genereres statisk med Eleventy, hvilket giver hurtig performance og en klar adskillelse mellem indhold og præsentation.  Herunder beskrives den valgte arkitektur og hvordan en AI-assistent kan hjælpe med løbende forbedringer.
+
+Mappestruktur
+
+florelfiskeri-revamp/
+├── package.json          # NPM-scripts og afhængigheder (kun Eleventy som devDependency)
+├── .eleventy.js          # Konfiguration for Eleventy og oversættelsesfilteret
+├── src/                  # Kildemapper
+│   ├── _includes/        # Nunjucks-skabeloner (layout.njk er hovedlayoutet)
+│   ├── _data/            # Datafiler (features.js og translations.js)
+│   ├── assets/           # Statisk indhold; billeder kopieres direkte til output
+│   ├── en/               # Engelske sider
+│   │   └── index.njk
+│   ├── da/               # Danske sider
+│   │   └── index.njk
+│   └── de/               # Tyske sider
+│       └── index.njk
+└── docs/                 # Output-mappe genereret af Eleventy (bruges af GitHub Pages)
+
+package.json
+
+package.json indeholder kun Eleventy som udviklingsafhængighed samt to scripts:
+
+Script
+Beskrivelse
+npm run build
+Kører Eleventy og genererer en statisk version af sitet i docs/
+npm start
+Starter en udviklingsserver med automatisk genindlæsning
+
+.eleventy.js
+
+Konfigurationsfilen definerer input- (src) og output-mapper (docs) samt et filter t, der oversætter tekstnøgler ud fra det angivne sprog.  Filteret trækker sine data fra src/_data/translations.js.
+
+Datafiler
+	•	src/_data/translations.js indeholder et objekt med alle oversættelser.  De tre topniveau‑nøgler (en, da, de) repræsenterer de tilgængelige sprog.  Når en ny tekst skal vises i flere sprog, tilføjes nøglen i alle tre objekter.
+	•	src/_data/features.js definerer husets faciliteter i form af et emoji‑ikon og en tilhørende oversættelsesnøgle.  Layoutet itererer over denne liste for at vise faciliteterne.
+
+Skabeloner
+
+Den vigtigste skabelon, src/_includes/layout.njk, opbygger hele siden.  Den henter oversættelser via filteret t, itererer over facilitetslisten og viser sektionerne hero, om huset, området, galleri, booking/kontakt og footer.  Layoutet anvender Tailwind via et CDN til styling for at gøre udvikling og tilpasning enkel.
+
+Sider
+
+Hver sprogmappes index.njk består kun af YAML-frontmatter:
+
+---
+layout: layout.njk
+lang: en   # da eller de for de andre sprog
+permalink: en/index.html
+---
+
 Sprogkoden (lang) bruges af oversættelsesfilteret.  permalink sikrer, at siderne udgives med pæne URL’er som /en/index.html, /da/index.html osv.
 
 Hvorfor denne arkitektur?
