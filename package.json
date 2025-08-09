@@ -1,0 +1,12 @@
+{
+  "name": "florelfiskeri-site",
+  "version": "2.0.0",
+  "description": "Static multilingual site for the Florel Fiskeri holiday house.",
+  "scripts": {
+    "build": "eleventy",
+    "start": "eleventy --serve"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.0"
+  }
+}

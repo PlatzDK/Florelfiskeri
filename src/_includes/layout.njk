@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{ 'siteTitle' | t(lang) }}</title>
+    <!-- Use Tailwind via CDN for rapid styling.  Replace or remove if you opt for a different CSS framework or custom styles. -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="font-sans antialiased text-gray-800">
+    <!-- Header with navigation -->
+    <header class="bg-white shadow sticky top-0 z-50">
+      <div class="container mx-auto px-4 flex justify-between items-center py-4">
+        <div class="text-2xl font-bold">{{ 'siteTitle' | t(lang) }}</div>
+        <nav class="space-x-4 text-gray-700">
+          <a href="/#about" class="hover:text-blue-700">{{ 'navAbout' | t(lang) }}</a>
+          <a href="/#experience" class="hover:text-blue-700">{{ 'navExperience' | t(lang) }}</a>
+          <a href="/#gallery" class="hover:text-blue-700">{{ 'navGallery' | t(lang) }}</a>
+          <a href="/#booking" class="hover:text-blue-700">{{ 'navBooking' | t(lang) }}</a>
+          <a href="/#contact" class="hover:text-blue-700">{{ 'navContact' | t(lang) }}</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero section -->
+      <section id="hero" class="bg-gray-800 text-white py-24">
+        <div class="container mx-auto px-4 text-center">
+          <h1 class="text-4xl md:text-5xl font-extrabold mb-4">
+            {{ 'heroTitle' | t(lang) }}
+          </h1>
+          <p class="mb-8 text-lg md:text-xl">
+            {{ 'heroSubtitle' | t(lang) }}
+          </p>
+          <a href="#booking" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded text-lg">
+            {{ 'heroButton' | t(lang) }}
+          </a>
+        </div>
+      </section>
+
+      <!-- About the house -->
+      <section id="about" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+          <h2 class="text-3xl font-bold mb-4">{{ 'aboutTitle' | t(lang) }}</h2>
+          <p class="mb-8 text-gray-700">{{ 'aboutIntro' | t(lang) }}</p>
+          <div class="grid md:grid-cols-2 gap-6">
+            {% for feature in features %}
+            <div class="flex items-start gap-3">
+              <span class="text-2xl">{{ feature.icon }}</span>
+              <p class="text-gray-800">{{ feature.key | t(lang) }}</p>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </section>
+
+      <!-- Experience the area -->
+      <section id="experience" class="py-16">
+        <div class="container mx-auto px-4">
+          <h2 class="text-3xl font-bold mb-4">{{ 'experienceTitle' | t(lang) }}</h2>
+          <p class="mb-8 text-gray-700">{{ 'experienceIntro' | t(lang) }}</p>
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="flex items-start gap-3">
+              <span class="text-2xl">🌳</span>
+              <p>{{ 'experience1' | t(lang) }}</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="text-2xl">🐟</span>
+              <p>{{ 'experience2' | t(lang) }}</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="text-2xl">🏛️</span>
+              <p>{{ 'experience3' | t(lang) }}</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="text-2xl">🚴</span>
+              <p>{{ 'experience4' | t(lang) }}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Gallery -->
+      <section id="gallery" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+          <h2 class="text-3xl font-bold mb-8">{{ 'galleryTitle' | t(lang) }}</h2>
+          <div class="grid md:grid-cols-2 gap-4">
+            <!-- Replace these placeholders with your own images stored under src/assets -->
+            <img src="/assets/gallery1.jpg" alt="Gallery image 1" class="rounded shadow" />
+            <img src="/assets/gallery2.jpg" alt="Gallery image 2" class="rounded shadow" />
+            <img src="/assets/gallery3.jpg" alt="Gallery image 3" class="rounded shadow" />
+            <img src="/assets/gallery4.jpg" alt="Gallery image 4" class="rounded shadow" />
+          </div>
+        </div>
+      </section>
+
+      <!-- Booking / Contact -->
+      <section id="booking" class="py-16">
+        <div class="container mx-auto px-4">
+          <h2 class="text-3xl font-bold mb-4">{{ 'bookingTitle' | t(lang) }}</h2>
+          <p class="mb-8 text-gray-700">{{ 'bookingIntro' | t(lang) }}</p>
+          <div class="bg-white p-6 rounded shadow">
+            <h3 class="text-2xl font-semibold mb-4">{{ 'contactTitle' | t(lang) }}</h3>
+            <p class="mb-2"><strong>{{ 'contactPhone' | t(lang) }}:</strong> +45 20 29 80 81</p>
+            <p class="mb-2"><strong>{{ 'contactEmail' | t(lang) }}:</strong> info@florelfiskeri.dk</p>
+            <p class="mb-2"><strong>{{ 'contactAddress' | t(lang) }}:</strong> Kompedal Plantage, Jutland, Denmark</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-gray-100 py-6 text-center">
+      <p class="text-gray-600">{{ 'footerNote' | t(lang) }}</p>
+    </footer>
+  </body>
+</html>
